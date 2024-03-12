@@ -1,0 +1,473 @@
+/* Global Rules */
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+/* Vars */
+:root {
+    --main-color: #019c90;
+    --section-padding: 60px;
+    --paragraph-color: #777;
+}
+
+/* Componant */
+.main-heading {
+    text-align: center;
+}
+
+.main-heading h2 {
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.main-heading h2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 2px;
+    background-color: black;
+}
+
+.main-heading h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.main-heading p {
+    font-weight: 300;
+    font-size: 19px;
+    color: var(--paragraph-color);
+    margin-bottom: 100px;
+}
+
+/* Header */
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+header .container img {
+    width: 100px;
+}
+
+/* landing */
+
+.landing {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 50%);
+    z-index: 1;
+}
+
+.landing video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.landing .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.landing .text h2 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-weight: 700;
+    font-size: 70px;
+    color: var(--main-color); 
+    margin-bottom: 20px;
+}
+
+.landing .text p {
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    max-width: 100%;
+    line-height: 2;
+}
+
+/* Kings */
+
+.kings {
+    padding: var(--section-padding) 0;
+}
+
+.kings .container .king{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: center;
+    gap: 30px;
+}
+
+.kings .container .king .box {
+    text-align: center;
+    position: relative;
+}
+
+.kings .container .king .box img {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.kings .container .king .box h3 {
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.kings .container .king .box .doua {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--paragraph-color);
+    margin-bottom: 10px;
+}
+
+.kings .container .king .box .date {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--paragraph-color);
+}
+
+/* intro */
+
+.intro {
+    padding: var(--section-padding) 0;
+    height: 600px;
+    background-image: url("../imgs/Flag.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 70%);
+}
+
+.intro .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.intro .text {
+    text-align: center;
+}
+
+.intro .text h2 {
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--main-color);
+    margin-bottom: 60px;
+}
+
+.intro .text p {
+    font-size: 20px;
+    color: white;
+    line-height: 2;
+}
+
+/* Battles */
+
+.battle {
+    padding: var(--section-padding) 0;
+}
+
+.battle .container .battles .box{
+    display: flex;
+    position: relative;
+    min-height: 400px;
+}
+
+.battle .container .battles .box:not(:last-of-type) {
+    margin-bottom: 100px;
+}
+
+.battle .container .battles .box:nth-of-type(2) {
+    justify-content: flex-end;
+}
+
+.battle .container .battles .box::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 70%);
+}
+
+@media (max-width: 992px) {
+    .battle .container .battles .box {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .battle .container .battles .box::before {
+        display: none;
+    }
+    .battle .container .battles .box:not(:last-of-type) {
+        margin-bottom: 0;
+    }
+}
+
+.battle .container .battles .box img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 70%);
+    z-index: -1;
+}
+
+@media (max-width: 992px) {
+    .battle .container .battles .box img{
+       display: none;
+    }
+}
+
+.battle .container .battles .box .text {
+    position: relative;
+    flex-basis: 60%;
+    background-color: white;
+    padding: 50px;
+    text-align: left;
+}
+
+.battle .container .battles .box:nth-of-type(2) .text {
+    text-align: right;
+}
+
+.battle .container .battles .box .text::before {
+    content: '';
+    position: absolute;
+    left: -120px;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 10%, white 60%);
+}
+
+.battle .container .battles .box:nth-of-type(2) .text::before {
+    content: '';
+    position: absolute;
+    right: -120px;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(-90deg, transparent 10%, white 60%);
+}
+
+@media (max-width: 992px) {
+    .battle .container .battles .box .text,
+    .battle .container .battles .box:nth-of-type(2) .text{
+        text-align: center;
+        flex-basis: 100%;
+    }
+
+    .battle .container .battles .box .text::before,
+    .battle .container .battles .box:nth-of-type(2) .text::before {
+        display: none;
+    }
+}
+
+.battle .container .battles .box .text h3 {
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--main-color);
+    margin-bottom: 30px; 
+}
+
+.battle .container .battles .box .text p {
+    font-size: 20px;
+    color: var(--paragraph-color);
+    line-height: 1.6;
+}
+
+.ending {
+    position: relative;
+    min-height: 100vh;
+    padding: var(--section-padding) 0;
+}
+
+.ending::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 60%);
+    z-index: 1;
+}
+
+.ending video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.ending .container:not(footer .container) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+@media (max-width: 767px) {
+    .ending .container {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.ending .text {
+    text-align: center;
+}
+
+.ending .text h2{
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--main-color);
+    margin-bottom: 60px;
+}
+
+.ending .text p {
+    font-size: 18px;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Footer */
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 15px;
+    z-index: 3;
+}
+
+footer .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container .name {
+    font-size: 25px;
+    color: white;
+}
+
+footer .container .name span {
+    color: var(--main-color);
+}
+
+footer .container p {
+    font-size: 35px;
+    color: white;
+}
+
+footer .container span {
+    color: var(--main-color);
+}
